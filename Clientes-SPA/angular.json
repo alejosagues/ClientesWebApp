@@ -28,6 +28,10 @@
               "src/assets"
             ],
             "styles": [
+              "../Clientes-SPA/node_modules/bootstrap/scss/bootstrap.scss",
+              "../Clientes-SPA/node_modules/@fortawesome/fontawesome-free/scss/fontawesome.scss",
+              "../Clientes-SPA/node_modules/@fortawesome/fontawesome-free/scss/brands.scss",
+              "../Clientes-SPA/node_modules/@fortawesome/fontawesome-free/scss/solid.scss",
               "src/styles.scss"
             ],
             "scripts": []
