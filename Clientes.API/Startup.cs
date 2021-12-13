@@ -12,7 +12,12 @@ using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 
 using Clientes.DAL;
+using Clientes.DAL.Entities;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.IdentityModel.Tokens;
+using System.Text;
 
 namespace Clientes.API
 {
@@ -28,6 +33,33 @@ namespace Clientes.API
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            //Apply Identity to User
+            IdentityBuilder builder = services.AddIdentityCore<User>(opt => {
+                opt.Password.RequireDigit = false;
+                opt.Password.RequireLowercase = false;
+                opt.Password.RequireUppercase = false;
+                opt.Password.RequireNonAlphanumeric = false;
+                opt.Password.RequiredLength = 4;
+            });
+            //build User metadata
+            builder.AddEntityFrameworkStores<ApplicationDbContext>();
+            //add Identity as sign in manager
+            builder.AddSignInManager<SignInManager<User>>();
+
+            //JWT authentication
+            services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+                .AddJwtBearer(options =>
+                {
+                    options.TokenValidationParameters = new TokenValidationParameters
+                    {
+                        ValidateIssuerSigningKey = true,
+                        IssuerSigningKey = new SymmetricSecurityKey(Encoding.ASCII
+                            .GetBytes(Configuration.GetSection("AppSettings:Key").Value)),
+                        ValidateIssuer = false,
+                        ValidateAudience = false
+                    };
+                });
+
             services.AddDbContext<ApplicationDbContext>(options => options.UseSqlite(Configuration.GetConnectionString("Default")));
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
@@ -51,6 +83,8 @@ namespace Clientes.API
                 builder.AllowAnyMethod();
                 builder.AllowAnyHeader();
             });
+
+            app.UseAuthentication();
 
             app.UseHttpsRedirection();
             app.UseMvc();

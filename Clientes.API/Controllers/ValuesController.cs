@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 
 using Clientes.DAL;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Clientes.API.Controllers
 {
@@ -21,6 +22,7 @@ namespace Clientes.API.Controllers
 
         // GET api/values
         [HttpGet]
+        [Authorize]
         public async Task<IActionResult> GetValues()
         {
             var values = await _context.Values.ToListAsync();

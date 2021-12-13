@@ -12157,7 +12157,8 @@
     ]
   },
   "packageFolders": {
-    "/home/suser/.nuget/packages/": {}
+    "/home/suser/.nuget/packages/": {},
+    "/usr/share/dotnet/sdk/NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
@@ -12168,6 +12169,9 @@
       "packagesPath": "/home/suser/.nuget/packages/",
       "outputPath": "/home/suser/Desktop/Proyecto Clientes/ClientesWebApp/Clientes.DAL/obj/",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "/usr/share/dotnet/sdk/NuGetFallbackFolder"
+      ],
       "configFilePaths": [
         "/home/suser/.nuget/NuGet/NuGet.Config"
       ],

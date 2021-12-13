@@ -13,6 +13,9 @@
         "packagesPath": "/home/suser/.nuget/packages/",
         "outputPath": "/home/suser/Desktop/Proyecto Clientes/ClientesWebApp/Clientes.API/obj/",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "/usr/share/dotnet/sdk/NuGetFallbackFolder"
+        ],
         "configFilePaths": [
           "/home/suser/.nuget/NuGet/NuGet.Config"
         ],
@@ -79,6 +82,9 @@
         "packagesPath": "/home/suser/.nuget/packages/",
         "outputPath": "/home/suser/Desktop/Proyecto Clientes/ClientesWebApp/Clientes.DAL/obj/",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "/usr/share/dotnet/sdk/NuGetFallbackFolder"
+        ],
         "configFilePaths": [
           "/home/suser/.nuget/NuGet/NuGet.Config"
         ],
