@@ -1,0 +1,11 @@
+/home/suser/Desktop/Proyecto Clientes/ClientesWebApp/Clientes.DAL/bin/Debug/netcoreapp2.2/Clientes.DAL.deps.json
+/home/suser/Desktop/Proyecto Clientes/ClientesWebApp/Clientes.DAL/bin/Debug/netcoreapp2.2/Clientes.DAL.runtimeconfig.json
+/home/suser/Desktop/Proyecto Clientes/ClientesWebApp/Clientes.DAL/bin/Debug/netcoreapp2.2/Clientes.DAL.runtimeconfig.dev.json
+/home/suser/Desktop/Proyecto Clientes/ClientesWebApp/Clientes.DAL/bin/Debug/netcoreapp2.2/Clientes.DAL.dll
+/home/suser/Desktop/Proyecto Clientes/ClientesWebApp/Clientes.DAL/bin/Debug/netcoreapp2.2/Clientes.DAL.pdb
+/home/suser/Desktop/Proyecto Clientes/ClientesWebApp/Clientes.DAL/obj/Debug/netcoreapp2.2/Clientes.DAL.csprojAssemblyReference.cache
+/home/suser/Desktop/Proyecto Clientes/ClientesWebApp/Clientes.DAL/obj/Debug/netcoreapp2.2/Clientes.DAL.csproj.CoreCompileInputs.cache
+/home/suser/Desktop/Proyecto Clientes/ClientesWebApp/Clientes.DAL/obj/Debug/netcoreapp2.2/Clientes.DAL.AssemblyInfoInputs.cache
+/home/suser/Desktop/Proyecto Clientes/ClientesWebApp/Clientes.DAL/obj/Debug/netcoreapp2.2/Clientes.DAL.AssemblyInfo.cs
+/home/suser/Desktop/Proyecto Clientes/ClientesWebApp/Clientes.DAL/obj/Debug/netcoreapp2.2/Clientes.DAL.dll
+/home/suser/Desktop/Proyecto Clientes/ClientesWebApp/Clientes.DAL/obj/Debug/netcoreapp2.2/Clientes.DAL.pdb

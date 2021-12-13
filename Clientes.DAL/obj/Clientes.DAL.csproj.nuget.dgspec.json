@@ -1,0 +1,66 @@
+{
+  "format": 1,
+  "restore": {
+    "/home/suser/Desktop/Proyecto Clientes/ClientesWebApp/Clientes.DAL/Clientes.DAL.csproj": {}
+  },
+  "projects": {
+    "/home/suser/Desktop/Proyecto Clientes/ClientesWebApp/Clientes.DAL/Clientes.DAL.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/suser/Desktop/Proyecto Clientes/ClientesWebApp/Clientes.DAL/Clientes.DAL.csproj",
+        "projectName": "Clientes.DAL",
+        "projectPath": "/home/suser/Desktop/Proyecto Clientes/ClientesWebApp/Clientes.DAL/Clientes.DAL.csproj",
+        "packagesPath": "/home/suser/.nuget/packages/",
+        "outputPath": "/home/suser/Desktop/Proyecto Clientes/ClientesWebApp/Clientes.DAL/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/suser/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp2.2"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp2.2": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp2.2": {
+          "dependencies": {
+            "Microsoft.AspNetCore.App": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.2.0, )",
+              "autoReferenced": true
+            },
+            "Microsoft.AspNetCore.Razor.Design": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "Microsoft.NETCore.App": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.2.0, )",
+              "autoReferenced": true
+            }
+          },
+          "imports": [
+            "net461"
+          ],
+          "assetTargetFallback": true,
+          "warn": true
+        }
+      }
+    }
+  }
+}
