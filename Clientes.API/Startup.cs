@@ -18,6 +18,9 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
+using Clientes.API.MailServices;
+using Clientes.API.MailServices.Interfaces;
+using Clientes.API.MailServices.DTOs;
 
 namespace Clientes.API
 {
@@ -40,11 +43,16 @@ namespace Clientes.API
                 opt.Password.RequireUppercase = false;
                 opt.Password.RequireNonAlphanumeric = false;
                 opt.Password.RequiredLength = 4;
+
+                //let emails be unique
+                opt.User.RequireUniqueEmail = true;
             });
             //build User metadata
             builder.AddEntityFrameworkStores<ApplicationDbContext>();
             //add Identity as sign in manager
             builder.AddSignInManager<SignInManager<User>>();
+            //add token for email validation
+            builder.AddDefaultTokenProviders();
 
             //JWT authentication
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
@@ -63,6 +71,9 @@ namespace Clientes.API
             services.AddDbContext<ApplicationDbContext>(options => options.UseSqlite(Configuration.GetConnectionString("Default")));
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+            //mail service setup
+            services.AddSingleton<IEmail, Mailjet>();
+            services.Configure<EmailOptionsDTO>(Configuration.GetSection("Mailjet"));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
