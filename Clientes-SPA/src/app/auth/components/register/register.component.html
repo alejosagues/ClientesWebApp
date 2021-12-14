@@ -1,0 +1,23 @@
+<div class="row">
+    <div class="col-md-6 offset-md-3 mt-4">
+        <h3>Register</h3>
+        <form #f="ngForm" (ngSubmit)="onSubmit(f)">
+            <div class="mb-3">
+              <label for="registerUsername" class="form-label">Username</label>
+              <input type="text" name="username" ngModel required #username="ngModel" class="form-control" id="registerUsername" placeholder="Enter username">
+            </div>
+            <div class="mb-3">
+              <label for="registerEmail" class="form-label">Email</label>
+              <input type="email" name="email" ngModel required #email="ngModel" class="form-control" id="registerEmail" placeholder="Enter email">
+            </div>
+            <div class="mb-3">
+              <label for="registerPassword" class="form-label">Password</label>
+              <input type="password" name="password" ngModel required #password="ngModel" class="form-control" id="registerPassword">
+            </div>
+            <div class="mb-3">
+              <a [routerLink]="['/login']">I already have an account</a>
+            </div>
+            <button type="submit" [disabled]="f.invalid" class="btn btn-primary">Register <i class="fas fa-user-plus"></i></button>
+          </form>
+    </div>
+</div>
