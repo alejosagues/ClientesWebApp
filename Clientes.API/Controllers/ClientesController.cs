@@ -10,7 +10,7 @@ using Microsoft.AspNetCore.Authorization;
 using Clientes.API.ViewModels;
 using Clientes.DAL.Entities;
 
-//use for testing
+//uncomment all the [Authorize]
 namespace Clientes.API.Controllers
 {
     [Route("api/[controller]")]

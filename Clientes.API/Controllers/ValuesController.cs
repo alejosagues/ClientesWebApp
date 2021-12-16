@@ -8,7 +8,7 @@ using Clientes.DAL;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Authorization;
 
-//use for testing
+//used for testing
 namespace Clientes.API.Controllers
 {/*
     [Route("api/[controller]")]
