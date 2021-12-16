@@ -10,6 +10,6 @@ namespace Clientes.DAL
         : base(options)
         { }
 
-        public DbSet<Value> Values { get; set; }
+        public DbSet<Cliente> Clientes { get; set; }
     }
 }

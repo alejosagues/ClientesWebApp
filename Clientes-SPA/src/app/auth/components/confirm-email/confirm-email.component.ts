@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { AlertService } from 'ngx-alerts';
 import { AuthService } from 'src/app/shared/services/auth.service';
 import { ProgressBarService } from 'src/app/shared/services/progress-bar.service';
 
@@ -14,7 +15,7 @@ export class ConfirmEmailComponent implements OnInit {
   urlParams: any = {};
 
   constructor(
-    private route: ActivatedRoute, private authService: AuthService, public progressBar: ProgressBarService
+    private route: ActivatedRoute, private authService: AuthService, public progressBar: ProgressBarService, private router: Router, private alertService: AlertService
   ) {}
 
   ngOnInit() {
@@ -30,11 +31,19 @@ export class ConfirmEmailComponent implements OnInit {
       console.log("Success");
       this.emailConfirmed = true;
       this.progressBar.completeLoading();
+      this.alertService.info('Estás siendo redireccionado...');
+      setTimeout(() => {
+        this.router.navigate(['']);
+    }, 2000);
     }, err => {
       this.progressBar.setError();
       console.log(err);
       this.progressBar.completeLoading();
       this.emailConfirmed = false;
+      this.alertService.info('Estás siendo redireccionado...');
+      setTimeout(() => {
+        this.router.navigate(['']);
+    }, 2000);
     });
   }
 

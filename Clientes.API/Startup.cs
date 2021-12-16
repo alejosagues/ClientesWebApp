@@ -21,6 +21,8 @@ using System.Text;
 using Clientes.API.MailServices;
 using Clientes.API.MailServices.Interfaces;
 using Clientes.API.MailServices.DTOs;
+using Microsoft.AspNetCore.HttpOverrides;
+using System.Net;
 
 namespace Clientes.API
 {
@@ -36,6 +38,10 @@ namespace Clientes.API
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.Configure<ForwardedHeadersOptions>(options =>
+            {
+                options.KnownProxies.Add(IPAddress.Parse("10.0.0.100"));
+            });
             //Apply Identity to User
             IdentityBuilder builder = services.AddIdentityCore<User>(opt => {
                 opt.Password.RequireDigit = false;
@@ -79,6 +85,12 @@ namespace Clientes.API
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
+            app.UseForwardedHeaders(new ForwardedHeadersOptions
+            {
+                ForwardedHeaders = ForwardedHeaders.XForwardedFor | ForwardedHeaders.XForwardedProto
+            });
+
+            app.UseAuthentication();
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
@@ -90,7 +102,8 @@ namespace Clientes.API
             }
             app.UseCors(builder =>
             {
-                builder.WithOrigins("http://localhost:4200");
+                //builder.WithOrigins("http://localhost:4200");
+                builder.AllowAnyOrigin();
                 builder.AllowAnyMethod();
                 builder.AllowAnyHeader();
             });

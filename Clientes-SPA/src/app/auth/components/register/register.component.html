@@ -1,23 +1,23 @@
 <div class="row">
     <div class="col-md-6 offset-md-3 mt-4">
-        <h3>Register</h3>
+        <h3>Registrarse</h3>
         <form #f="ngForm" (ngSubmit)="onSubmit(f)">
             <div class="mb-3">
-              <label for="registerUsername" class="form-label">Username</label>
-              <input type="text" name="username" ngModel required #username="ngModel" class="form-control" id="registerUsername" placeholder="Enter username">
+              <label for="registerUsername" class="form-label">Nombre de usuario</label>
+              <input type="text" name="username" ngModel required #username="ngModel" class="form-control" id="registerUsername" placeholder="Ingrese su nuevo nombre de usuario">
             </div>
             <div class="mb-3">
               <label for="registerEmail" class="form-label">Email</label>
-              <input type="email" name="email" ngModel required #email="ngModel" class="form-control" id="registerEmail" placeholder="Enter email">
+              <input type="email" name="email" ngModel required #email="ngModel" class="form-control" id="registerEmail" placeholder="Ingrese su email">
             </div>
             <div class="mb-3">
-              <label for="registerPassword" class="form-label">Password</label>
+              <label for="registerPassword" class="form-label">Contraseña</label>
               <input type="password" name="password" ngModel required #password="ngModel" class="form-control" id="registerPassword">
             </div>
             <div class="mb-3">
-              <a [routerLink]="['/login']">I already have an account</a>
+              <a [routerLink]="['/login']">Ya tengo una cuenta</a>
             </div>
-            <button type="submit" [disabled]="f.invalid" class="btn btn-primary">Register <i class="fas fa-user-plus"></i></button>
+            <button type="submit" [disabled]="f.invalid" class="btn btn-primary">Registrarse <i class="fas fa-user-plus"></i></button>
           </form>
     </div>
 </div>

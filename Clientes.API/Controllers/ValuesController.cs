@@ -8,8 +8,9 @@ using Clientes.DAL;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Authorization;
 
+//use for testing
 namespace Clientes.API.Controllers
-{
+{/*
     [Route("api/[controller]")]
     [ApiController]
     public class ValuesController : ControllerBase
@@ -55,5 +56,5 @@ namespace Clientes.API.Controllers
         public void Delete(int id)
         {
         }
-    }
+    }*/
 }

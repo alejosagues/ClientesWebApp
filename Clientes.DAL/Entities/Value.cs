@@ -1,5 +1,6 @@
 namespace Clientes.DAL.Entities
 {
+    //for testing
     public class Value
     {
         //For Client add commented

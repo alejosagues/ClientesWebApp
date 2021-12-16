@@ -7,7 +7,7 @@ import { HttpClient } from '@angular/common/http'
   styleUrls: ['./value.component.scss']
 })
 export class ValueComponent implements OnInit {
-  values: any;
+  clientes: any;
 
   constructor(private http: HttpClient) { }
 
@@ -16,9 +16,9 @@ export class ValueComponent implements OnInit {
   }
 
   getValues(){
-    return this.http.get("http://localhost:5000/api/values").subscribe(response =>{
+    return this.http.get("http://localhost/api/clientes").subscribe(response =>{
       console.log(response);
-      this.values = response;
+      this.clientes = response;
     }, error => {
       console.log(error);
     });

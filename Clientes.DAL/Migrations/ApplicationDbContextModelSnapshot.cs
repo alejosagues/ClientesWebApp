@@ -16,6 +16,30 @@ namespace Clientes.DAL.Migrations
             modelBuilder
                 .HasAnnotation("ProductVersion", "2.2.6-servicing-10079");
 
+            modelBuilder.Entity("Clientes.DAL.Entities.Cliente", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("Apellido");
+
+                    b.Property<int>("DNI");
+
+                    b.Property<string>("Email");
+
+                    b.Property<string>("Fecha_de_Creación");
+
+                    b.Property<string>("Nombre");
+
+                    b.Property<string>("Usuario_creador");
+
+                    b.Property<int>("_id");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Clientes");
+                });
+
             modelBuilder.Entity("Clientes.DAL.Entities.User", b =>
                 {
                     b.Property<string>("Id")
@@ -64,18 +88,6 @@ namespace Clientes.DAL.Migrations
                         .HasName("UserNameIndex");
 
                     b.ToTable("AspNetUsers");
-                });
-
-            modelBuilder.Entity("Clientes.DAL.Entities.Value", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd();
-
-                    b.Property<string>("Name");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Values");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>

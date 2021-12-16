@@ -1,0 +1,17 @@
+/home/suser/Desktop/Proyecto Clientes/ClientesWebApp/Clientes.API/bin/Release/netcoreapp2.2/Clientes.API.deps.json
+/home/suser/Desktop/Proyecto Clientes/ClientesWebApp/Clientes.API/bin/Release/netcoreapp2.2/Clientes.API.runtimeconfig.json
+/home/suser/Desktop/Proyecto Clientes/ClientesWebApp/Clientes.API/bin/Release/netcoreapp2.2/Clientes.API.runtimeconfig.dev.json
+/home/suser/Desktop/Proyecto Clientes/ClientesWebApp/Clientes.API/bin/Release/netcoreapp2.2/Clientes.API.dll
+/home/suser/Desktop/Proyecto Clientes/ClientesWebApp/Clientes.API/bin/Release/netcoreapp2.2/Clientes.API.pdb
+/home/suser/Desktop/Proyecto Clientes/ClientesWebApp/Clientes.API/bin/Release/netcoreapp2.2/Clientes.DAL.dll
+/home/suser/Desktop/Proyecto Clientes/ClientesWebApp/Clientes.API/bin/Release/netcoreapp2.2/Clientes.DAL.pdb
+/home/suser/Desktop/Proyecto Clientes/ClientesWebApp/Clientes.API/obj/Release/netcoreapp2.2/Clientes.API.csprojAssemblyReference.cache
+/home/suser/Desktop/Proyecto Clientes/ClientesWebApp/Clientes.API/obj/Release/netcoreapp2.2/Clientes.API.csproj.CoreCompileInputs.cache
+/home/suser/Desktop/Proyecto Clientes/ClientesWebApp/Clientes.API/obj/Release/netcoreapp2.2/Clientes.API.RazorAssemblyInfo.cache
+/home/suser/Desktop/Proyecto Clientes/ClientesWebApp/Clientes.API/obj/Release/netcoreapp2.2/Clientes.API.RazorAssemblyInfo.cs
+/home/suser/Desktop/Proyecto Clientes/ClientesWebApp/Clientes.API/obj/Release/netcoreapp2.2/Clientes.API.AssemblyInfoInputs.cache
+/home/suser/Desktop/Proyecto Clientes/ClientesWebApp/Clientes.API/obj/Release/netcoreapp2.2/Clientes.API.AssemblyInfo.cs
+/home/suser/Desktop/Proyecto Clientes/ClientesWebApp/Clientes.API/obj/Release/netcoreapp2.2/Clientes.API.RazorTargetAssemblyInfo.cache
+/home/suser/Desktop/Proyecto Clientes/ClientesWebApp/Clientes.API/obj/Release/netcoreapp2.2/Clientes.API.csproj.CopyComplete
+/home/suser/Desktop/Proyecto Clientes/ClientesWebApp/Clientes.API/obj/Release/netcoreapp2.2/Clientes.API.dll
+/home/suser/Desktop/Proyecto Clientes/ClientesWebApp/Clientes.API/obj/Release/netcoreapp2.2/Clientes.API.pdb
