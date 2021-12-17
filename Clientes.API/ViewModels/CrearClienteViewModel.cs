@@ -14,7 +14,7 @@ namespace Clientes.API.ViewModels
         [Required]
         public int DNI { get; set; }
 
-        public string Fecha_de_Creación { get; set; }
+        public string Fecha_de_Creacion { get; set; }
 
         public string Usuario_creador { get; set; }
     }

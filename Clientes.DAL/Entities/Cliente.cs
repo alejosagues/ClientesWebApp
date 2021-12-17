@@ -19,7 +19,7 @@ namespace Clientes.DAL.Entities
 
         public string Email { get; set; }
 
-        public string Fecha_de_Creación { get; set; }
+        public string Fecha_de_Creacion { get; set; }
 
         public string Usuario_creador { get; set; }
     }

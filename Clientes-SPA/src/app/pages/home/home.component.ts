@@ -4,6 +4,8 @@ import { AuthService } from 'src/app/shared/services/auth.service';
 import { HttpClient } from '@angular/common/http';
 import { ModalDismissReasons, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { FormControl, ReactiveFormsModule, FormGroup, NgForm, Validators } from '@angular/forms';
+import { DataTableModule } from 'angular-6-datatable';
+import { filter } from 'rxjs/operators';
 
 export interface interfazCliente {
   nombre: string;
@@ -11,6 +13,7 @@ export interface interfazCliente {
   dni: number;
   email: string;
   usuario_creador: string;
+  fecha_de_Creacion: string;
 }
 
 @Component({
@@ -22,6 +25,7 @@ export interface interfazCliente {
 export class HomeComponent implements OnInit {
   
   clientes: any;
+  filterData: any;
   closeResult: string;
   APIUrl = 'http://localhost:5000/api/clientes/';
   ClientForm: FormGroup;
@@ -44,9 +48,31 @@ export class HomeComponent implements OnInit {
       email: new FormControl('',Validators.email)  
     })
   }
+  
+  search(term: string) {
+    if(!term) {
+      this.filterData = this.clientes;
+    } else {
+      this.filterData = [... new Set([ ...this.clientes.filter(x => 
+         x.nombre.trim().toLowerCase().includes(term.trim().toLowerCase())
+      ), ...
+      this.clientes.filter(x => 
+        x.apellido.trim().toLowerCase().includes(term.trim().toLowerCase())
+      ), ...
+      this.clientes.filter(x => 
+        x.email.trim().toLowerCase().includes(term.trim().toLowerCase())
+      ), ...
+      this.clientes.filter(x => 
+        x.fecha_de_Creacion.trim().toLowerCase().includes(term.trim().toLowerCase())
+      ), ...
+      this.clientes.filter(x => 
+        x.dni.toString().trim().toLowerCase().includes(term.trim().toLowerCase())
+      )
+      ])];
+    }
+  }
 
   onSubmit_crear(f) {
-    console.log(f.value);
     f.value.usuario_creador = this.authService.decodedToken.unique_name
     this.http.post(this.APIUrl + 'crear', f.value)
       .subscribe((result) => {
@@ -69,8 +95,9 @@ export class HomeComponent implements OnInit {
 
   getClientes(){
     return this.http.get(this.APIUrl).subscribe(response =>{
-      console.log(response);
       this.clientes = response;
+      this.filterData = response;
+      console.log(response);
     }, error => {
       console.log(error);
     });
@@ -100,6 +127,12 @@ export class HomeComponent implements OnInit {
      backdrop: 'static',
      size: 'lg'
    });
+    this.ClientEditForm = new FormGroup({
+      nombre: new FormControl(clientes.nombre,Validators.required),
+      apellido: new FormControl(clientes.apellido,Validators.required),
+      dni: new FormControl(clientes.dni,Validators.required),
+      email: new FormControl(clientes.email,Validators.email)  
+    })
     document.getElementById('nombre.e').setAttribute('value', clientes.nombre);
     document.getElementById('apellido.e').setAttribute('value', clientes.apellido);
     document.getElementById('dni.e').setAttribute('value', clientes.dni);

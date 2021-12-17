@@ -11,12 +11,15 @@ import { HomeComponent } from './pages/home/home.component';
 import { FormsModule } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ReactiveFormsModule } from '@angular/forms';
+import { NameFilterPipe } from './pages/home/name-filter.pipe';
+import { DataTableModule } from 'angular-6-datatable';
 
 @NgModule({
   declarations: [
     AppComponent,
     ValueComponent,
-    HomeComponent
+    HomeComponent,
+    NameFilterPipe
   ],
   imports: [
     BrowserModule,
@@ -26,7 +29,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     AuthModule,
     FormsModule,
     NgbModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    DataTableModule
   ],
   providers: [],
   bootstrap: [AppComponent]

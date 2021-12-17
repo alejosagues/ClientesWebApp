@@ -53,7 +53,7 @@ namespace Clientes.API.Controllers
                 Apellido = model.Apellido,
                 DNI = model.DNI,
                 Email = model.Email,
-                Fecha_de_Creación = fecha,
+                Fecha_de_Creacion = fecha,
                 Usuario_creador = model.Usuario_creador
             };
             if(cliente.Email == null){
@@ -77,8 +77,8 @@ namespace Clientes.API.Controllers
             if(model.Usuario_creador == null){
                 model.Usuario_creador = "admin";
             };
-            if(model.Fecha_de_Creación == null){
-                model.Fecha_de_Creación = DateTime.Now.ToString("dd/MM/yyyy");
+            if(model.Fecha_de_Creacion == null){
+                model.Fecha_de_Creacion = DateTime.Now.ToString("dd/MM/yyyy");
             };
             _context.Entry(model).State = EntityState.Modified;
             try
